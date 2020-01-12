@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinhHoa_LenhDoWhile", "MinhHoa_LenhDoWhile\MinhHoa_LenhDoWhile.csproj", "{CBFD5D55-AE8B-4FD1-94BF-8EA765584A99}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBFD5D55-AE8B-4FD1-94BF-8EA765584A99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBFD5D55-AE8B-4FD1-94BF-8EA765584A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBFD5D55-AE8B-4FD1-94BF-8EA765584A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBFD5D55-AE8B-4FD1-94BF-8EA765584A99}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
