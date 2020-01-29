@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScanAvatar", "ScanAvatar\ScanAvatar.csproj", "{ADA2803D-B228-4F8A-A770-6FC8F774D9D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADA2803D-B228-4F8A-A770-6FC8F774D9D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADA2803D-B228-4F8A-A770-6FC8F774D9D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADA2803D-B228-4F8A-A770-6FC8F774D9D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADA2803D-B228-4F8A-A770-6FC8F774D9D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53BB4406-B3F5-4731-AC1F-FC076277A72B}
+	EndGlobalSection
+EndGlobal
