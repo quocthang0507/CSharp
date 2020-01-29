@@ -14,7 +14,7 @@ namespace TextToSpeech
 			using (SpeechSynthesizer synth = new SpeechSynthesizer())
 			{
 				synth.SetOutputToDefaultAudioDevice();
-				synth.Speak("Hello World");
+				synth.Speak("Welcome to TOEIC Mastery");
 			}
 			Console.ReadKey();
 		}
