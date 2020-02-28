@@ -6,9 +6,9 @@ namespace ReadingDigit
 {
 	public class DocSoTiengViet
 	{
-		private string[] ChuSo = new string[10] { " không", " một", " hai", " ba", " bốn", " năm", " sáu", " bẩy", " tám", " chín" };
+		private string[] ChuSo = new string[10] { " không", " một", " hai", " ba", " bốn", " năm", " sáu", " bảy", " tám", " chín" };
 		private string[] Tien = new string[6] { "", " nghìn", " triệu", " tỷ", " nghìn tỷ", " triệu tỷ" };
-		// Hàm đọc số thành chữ
+
 		public string DocTienBangChu(long SoTien, string strTail)
 		{
 			int lan, i;
@@ -75,7 +75,7 @@ namespace ReadingDigit
 			KetQua = KetQua.Trim() + strTail;
 			return KetQua.Substring(0, 1).ToUpper() + KetQua.Substring(1);
 		}
-		// Hàm đọc số có 3 chữ số
+		
 		private string DocSo3ChuSo(int baso)
 		{
 			int tram, chuc, donvi;
