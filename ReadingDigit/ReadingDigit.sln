@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadingDigit", "ReadingDigit\ReadingDigit.csproj", "{EBBA44B7-3800-4474-BE8C-253755C3EA1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBBA44B7-3800-4474-BE8C-253755C3EA1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBBA44B7-3800-4474-BE8C-253755C3EA1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBBA44B7-3800-4474-BE8C-253755C3EA1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBBA44B7-3800-4474-BE8C-253755C3EA1C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {45ED3014-3B15-4E6C-AE2E-A97802351D37}
+	EndGlobalSection
+EndGlobal
