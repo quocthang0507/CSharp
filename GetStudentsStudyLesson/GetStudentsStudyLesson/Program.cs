@@ -10,8 +10,8 @@ namespace GetStudentsStudyLesson
 {
 	class Program
 	{
-		static string url = @"http://online.dlu.edu.vn/Home/DrawingStudentSchedule?StudentId={0}&YearId=2019-2020&TermId=HK02&WeekId=11";
-		static string id = "CT4226D";
+		static string url = @"http://online.dlu.edu.vn/Home/DrawingStudentSchedule?StudentId={0}&YearId=2019-2020&TermId=HK02&WeekId=19";
+		static string id = "QT2008D";
 
 		static void Main(string[] args)
 		{
