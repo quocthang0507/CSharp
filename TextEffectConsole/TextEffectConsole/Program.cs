@@ -36,7 +36,7 @@ namespace TextEffectConsole
 				{
 					foreach (EText et in ET)
 					{
-						et.ve();
+						et.Draw();
 					}
 				}
 

@@ -4,12 +4,13 @@ namespace TextEffectConsole
 {
 	class EText
 	{
-		int x, X, y, index, k, l;
-		string s;
-		ConsoleColor[] cl;
-		ConsoleColor cl1, cl2;
-		Random r;
-		int iColor, nColor;
+		private int x, X, y, index, k, l;
+		private string s;
+		private ConsoleColor[] cl;
+		private ConsoleColor cl1, cl2;
+		private Random r;
+		private int iColor, nColor;
+
 		public EText(string s, int x, int y)
 		{
 			this.x = x;
@@ -21,14 +22,14 @@ namespace TextEffectConsole
 			index = l - 1;
 			cl = new ConsoleColor[] { ConsoleColor.Magenta, ConsoleColor.Yellow, ConsoleColor.Red, ConsoleColor.White, ConsoleColor.Black, ConsoleColor.Green };
 			nColor = cl.Length;
+			r = new Random();
 			cl1 = ConsoleColor.Black;
 			cl2 = ConsoleColor.Green;
-			r = new Random();
 			iColor = 0;
 		}
-		public void ve()
-		{
 
+		public void Draw()
+		{
 			Console.SetCursorPosition(X, y);
 			for (int i = k; i < l; i++)
 			{
@@ -37,11 +38,8 @@ namespace TextEffectConsole
 				{
 					Console.ForegroundColor = cl2;
 				}
-
 				Console.Write(s[i]);
-
 			}
-
 			if (index == k)
 			{
 				k++;
@@ -61,8 +59,6 @@ namespace TextEffectConsole
 				}
 			}
 			index--;
-
 		}
-
 	}
 }
