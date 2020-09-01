@@ -9,7 +9,15 @@ namespace ReadingDigit
 		{
 			Console.OutputEncoding = Encoding.UTF8;
 			DocSoTiengViet soTiengViet = new DocSoTiengViet();
-			Console.WriteLine(soTiengViet.DocTienBangChu(20202, ""));
+			while (true)
+			{
+				Console.Write("Nhập một con số bất kỳ: ");
+				if (int.TryParse(Console.ReadLine(), out int number))
+				{
+					Console.WriteLine(soTiengViet.DocTienBangChu(number, ""));
+				}
+				else break;
+			}
 			Console.ReadKey();
 		}
 	}

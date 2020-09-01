@@ -1,22 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ReadingDigit
+﻿namespace ReadingDigit
 {
 	public class DocSoTiengViet
 	{
-		private string[] ChuSo = new string[10] { " không", " một", " hai", " ba", " bốn", " năm", " sáu", " bảy", " tám", " chín" };
-		private string[] Tien = new string[6] { "", " nghìn", " triệu", " tỷ", " nghìn tỷ", " triệu tỷ" };
+		private readonly string[] ChuSo = new string[10] { " không", " một", " hai", " ba", " bốn", " năm", " sáu", " bảy", " tám", " chín" };
+		private readonly string[] Tien = new string[6] { "", " nghìn", " triệu", " tỷ", " nghìn tỷ", " triệu tỷ" };
 
 		public string DocTienBangChu(long SoTien, string strTail)
 		{
 			int lan, i;
 			long so;
-			string KetQua = "", tmp = "";
+			string KetQua = "";
 			int[] ViTri = new int[6];
-			if (SoTien < 0) return "Số tiền âm !";
-			if (SoTien == 0) return "Không đồng !";
+			if (SoTien < 0) return "Số tiền âm!";
+			else if (SoTien == 0) return "Không đồng!";
 			if (SoTien > 0)
 			{
 				so = SoTien;
@@ -28,15 +24,14 @@ namespace ReadingDigit
 			//Kiểm tra số quá lớn
 			if (SoTien > 8999999999999999)
 			{
-				SoTien = 0;
 				return "";
 			}
 			ViTri[5] = (int)(so / 1000000000000000);
-			so = so - long.Parse(ViTri[5].ToString()) * 1000000000000000;
+			so -= long.Parse(ViTri[5].ToString()) * 1000000000000000;
 			ViTri[4] = (int)(so / 1000000000000);
-			so = so - long.Parse(ViTri[4].ToString()) * +1000000000000;
+			so -= long.Parse(ViTri[4].ToString()) * +1000000000000;
 			ViTri[3] = (int)(so / 1000000000);
-			so = so - long.Parse(ViTri[3].ToString()) * 1000000000;
+			so -= long.Parse(ViTri[3].ToString()) * 1000000000;
 			ViTri[2] = (int)(so / 1000000);
 			ViTri[1] = (int)((so % 1000000) / 1000);
 			ViTri[0] = (int)(so % 1000);
@@ -66,7 +61,7 @@ namespace ReadingDigit
 			}
 			for (i = lan; i >= 0; i--)
 			{
-				tmp = DocSo3ChuSo(ViTri[i]);
+				string tmp = DocSo3ChuSo(ViTri[i]);
 				KetQua += tmp;
 				if (ViTri[i] != 0) KetQua += Tien[i];
 				if ((i > 0) && (!string.IsNullOrEmpty(tmp))) KetQua += ",";//&& (!string.IsNullOrEmpty(tmp))
@@ -75,13 +70,13 @@ namespace ReadingDigit
 			KetQua = KetQua.Trim() + strTail;
 			return KetQua.Substring(0, 1).ToUpper() + KetQua.Substring(1);
 		}
-		
+
 		private string DocSo3ChuSo(int baso)
 		{
 			int tram, chuc, donvi;
 			string KetQua = "";
-			tram = (int)(baso / 100);
-			chuc = (int)((baso % 100) / 10);
+			tram = baso / 100;
+			chuc = (baso % 100) / 10;
 			donvi = baso % 10;
 			if ((tram == 0) && (chuc == 0) && (donvi == 0)) return "";
 			if (tram != 0)
