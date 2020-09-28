@@ -10,7 +10,7 @@ namespace ScanAvatar
 	{
 		static void Main(string[] args)
 		{
-			ScanAvatar avatar = new ScanAvatar(@"C:\Users\quoct\Documents\Visual Studio 2019\ScanAvatar\ScanAvatar\Students.txt");
+			ScanAvatar avatar = new ScanAvatar(@"D:\OneDrive\Thang\HOCTAP\TU HOC\CSharp\ScanAvatar\ScanAvatar\Students.txt");
 			avatar.SaveAllImagesFromFile();
 			Console.ReadKey();
 		}
@@ -20,7 +20,7 @@ namespace ScanAvatar
 	{
 		string remoteUri = @"http://online.dlu.edu.vn/HinhSV/";
 		string fileName = "{0}.jpg";
-		string folder = @"Hinh KT XS\";
+		string folder = @"Hinh CTK39\";
 		WebClient webClient;
 
 		string pathToFile;
@@ -36,14 +36,15 @@ namespace ScanAvatar
 		/// </summary>
 		/// <param name="pathToFile">Path to file .txt</param>
 		/// <returns>List of student IDs</returns>
-		private List<string> ReadFromFile(string pathToFile)
+		private List<KeyValuePair<string, string>> ReadFromFile(string pathToFile)
 		{
-			List<string> data = new List<string>();
+			List<KeyValuePair<string, string>> data = new List<KeyValuePair<string, string>>();
 			using (StreamReader reader = new StreamReader(pathToFile))
 			{
 				while (!reader.EndOfStream)
 				{
-					data.Add(reader.ReadLine());
+					var person = reader.ReadLine().Split('\t');
+					data.Add(new KeyValuePair<string, string>(person[0], string.Concat(person[1], ' ', person[2])));
 				}
 				reader.Close();
 			}
@@ -65,9 +66,9 @@ namespace ScanAvatar
 		/// </summary>
 		/// <param name="id"></param>
 		/// <returns></returns>
-		private string GetFileName(string id)
+		private string GetFileName(KeyValuePair<string, string> person)
 		{
-			return string.Format(folder + fileName, id);
+			return string.Format(folder + fileName, person.Key + "_" + person.Value);
 		}
 
 		/// <summary>
@@ -90,11 +91,11 @@ namespace ScanAvatar
 			}
 		}
 
-		public bool SaveStudentImage(string id)
+		public bool SaveStudentImage(KeyValuePair<string, string> person)
 		{
 			try
 			{
-				webClient.DownloadFile(GetLink(id), GetFileName(id));
+				webClient.DownloadFile(GetLink(person.Key), GetFileName(person));
 			}
 			catch (Exception)
 			{
@@ -105,11 +106,11 @@ namespace ScanAvatar
 
 		public void SaveAllImagesFromFile()
 		{
-			List<string> data = ReadFromFile(pathToFile);
+			List<KeyValuePair<string, string>> data = ReadFromFile(pathToFile);
 			Directory.CreateDirectory(folder);
 			foreach (var item in data)
 			{
-				if (IsImageUrl(GetLink(item)))
+				if (IsImageUrl(GetLink(item.Key)))
 					if (SaveStudentImage(item))
 						Console.WriteLine(item + " successfully downloaded file");
 					else
