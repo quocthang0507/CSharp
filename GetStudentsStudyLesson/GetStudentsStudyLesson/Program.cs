@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HtmlAgilityPack;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
@@ -49,14 +50,34 @@ namespace GetStudentsStudyLesson
 						Console.WriteLine("Loi dang nhap");
 						return;
 					}
-					else if (html.Contains(id))
+					else
 					{
-						if (html.Contains("CTK45B - nhom 2"))
-							Console.WriteLine(mssv + '\t' + 2);
-						else if (html.Contains("CTK45B - nhom 1"))
-							Console.WriteLine(mssv + '\t' + 1);
-						else
-							Console.WriteLine(mssv);
+						HtmlDocument document = new HtmlDocument();
+						document.LoadHtml(html);
+						var tables = document.DocumentNode.SelectSingleNode("//table");
+						bool flag = false;
+						foreach (var row in tables.SelectNodes("//tr"))
+						{
+							foreach (var cell in row.SelectNodes("//td"))
+							{
+								var htmlCell = cell.InnerHtml;
+								if (!flag && htmlCell.Contains(id))
+								{
+									if (htmlCell.Contains("CTK45B - nhom 2"))
+									{
+										Console.WriteLine(mssv + '\t' + 2);
+										flag = true;
+									}
+									else if (htmlCell.Contains("CTK45B - nhom 1"))
+									{
+										Console.WriteLine(mssv + '\t' + 1);
+										flag = true;
+									}
+									else
+										Console.WriteLine(mssv);
+								}
+							}
+						}
 					}
 				}
 				Console.WriteLine("End");
